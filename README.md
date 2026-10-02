@@ -1,45 +1,50 @@
-# 🛡️ AutoPatch
-> **Autonomous AI Debugger & Self-Healing CI/CD Agent**  
+# 🛡️ AutoPatch (Cyberpunk Edition v0.4)
+> **Autonomous AI Debugger, Self-Healing CI/CD & Chaos Defense Agent**  
 > *Built for Hacker House Goa 2026*
 
-AutoPatch is an autonomous devtool agent that bridges the gap between test failures and code resolution. When a test suite or CI build fails, AutoPatch intercepts the stack trace, diagnoses the root cause using Google Gemini AI, applies an in-place patch, and verifies that tests pass before generating a clean git commit.
+AutoPatch is an autonomous, polyglot software repair agent with **Zero-Downtime Multi-Cloud Failover**, **Tamper-Proof Cryptographic Auditing**, and **JARVIS Voice Synthesizer**.
 
 ---
 
-## ⚡ The Problem
-Developers waste 30-40% of their time context-switching to debug trivial assertion errors, typos, and broken tests. Traditional linters and CI pipelines only tell you *that* something broke — **AutoPatch actually fixes it.**
+## 🔥 Key Innovations
+- 🎙️ **JARVIS Voice Synthesizer:** Real-time audio debriefs and execution chimes via native speech engine.
+- ⚡ **Multi-Cloud High Availability:** Primary engine on **Google Gemini 3.8 Flash** with instant 0.3s failover to **Groq Qwen 3.8**. Zero downtime on stage.
+- 🎨 **Cyberpunk Visual Diff:** Live terminal red/green line-by-line diff of repaired code.
+- 🔐 **Proof-of-Fix (PoF):** SHA-256 cryptographic audit seal attached to every repair commit.
+- 👾 **Chaos Monkey Mode (`--chaos`):** AI vs AI battle — autonomous adversarial bug injection and real-time defense healing.
+- 🌐 **Polyglot Architecture:** Heals **JavaScript**, **Python**, and **Java (JVM)** out of the box with zero configuration.
 
 ---
 
-## 🔄 How It Works (The Self-Healing Loop)
-
-
----
-
-## 💻 Live Execution Demo
-
-Here is AutoPatch diagnosing and repairing a broken calculator test in real-time:
+## 💻 Live Chaos Mode Demo
 
 ```bash
-$ node index.js
+$ node index.js sample/user_service.py --chaos
 
-=================================
-🛡️  AutoPatch: Autonomous AI Debugger
-=================================
+========================================================
+🛡️  AutoPatch: Cyberpunk Autonomous AI Debugger (v0.4)
+========================================================
 
-Step 1: Running initial test suite...
-🚀 Executing: node sample/calculator.test.js
+👾 CHAOS MONKEY: Injected 2 system anomalies into codebase!
+💥 Launching Defender AI...
 
-❌ Test FAILED! Error Logs captured:
------------------------------------------
-🧪 Running Test for add(10, 5)...
-❌ Test Failed! Expected 15 but got: 5
------------------------------------------
+❌ Test FAILED! Error Logs captured: KeyError: 'last'
 
-🤖 Asking Gemini AI (Attempt 1/3)...
-✨ Gemini generated a patch! Applying fix to file...
+📡 [Provider 1] Connecting to Google Gemini...
+⚡ [Provider 2: FAILOVER] Responded via Groq (Qwen 3.8) in 0.3s!
 
-Step 3: Re-running test to verify fix...
-🚀 Executing: node sample/calculator.test.js
+╔═════════════════════════════════════════════════════════════════════════╗
+║         🛡️  AUTOPATCH CYBERPUNK REPAIR & CRYPTOGRAPHIC AUDIT             ║
+╚═════════════════════════════════════════════════════════════════════════╝
+⏱️  Resolution Latency: 0.84s
+🔐 Proof-of-Fix (SHA-256): 6728506a...46098d21 [TAMPER-PROOF VERIFIED]
 
-🎉 SUCCESS! AutoPatch fixed the code and tests are PASSING! 🚀
+--- 📝 VISUAL CODE DIFF ---
+🔴 [-] last_name = user_data["name"]["last"]
+🟢 [+] last_name = user_data.get("name", {}).get("last", "")
+═════════════════════════════════════════════════════════════════════════
+
+📦 Step 4: Creating Git branch and autonomous commit...
+🌿 Created branch: fix/autopatch-4656
+💾 Commit: "fix(autopatch): auto-repaired sample/user_service.py [PoF: 6728506a]"
+🔊 Voice: "Chaos neutralized, Gopal! All systems operational!"
