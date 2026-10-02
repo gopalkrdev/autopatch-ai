@@ -10,16 +10,16 @@ transactions_batch = [
     # 1. Normal Deposit
     {"id": "TX101", "type": "deposit", "account": "ACC_001", "amount": 2000.0},
 
-    # ❌ COMPLEX BUG 1 FIX: Amount String mein aa gaya, but code ab convert karega!
+    # COMPLEX BUG 1 FIX: Amount String mein aa gaya, but code ab convert karega!
     {"id": "TX102", "type": "withdraw", "account": "ACC_002", "amount": "1500.50"},
 
     # 3. Normal Transfer
     {"id": "TX103", "type": "transfer", "from_account": "ACC_001", "to_account": "ACC_003", "amount": 3000.0},
 
-    # ❌ COMPLEX BUG 2 FIX: Destination account 'ACC_999' database mein exist nahi karta - code handle karega
+    # COMPLEX BUG 2 FIX: Destination account 'ACC_999' database mein exist nahi karta - code handle karega
     {"id": "TX104", "type": "transfer", "from_account": "ACC_002", "to_account": "ACC_999", "amount": 1000.0},
 
-    # ❌ COMPLEX BUG 3 FIX: Negative amount ka attack - code validate karega
+    # COMPLEX BUG 3 FIX: Negative amount ka attack - code validate karega
     {"id": "TX105", "type": "deposit", "account": "ACC_003", "amount": -500.0}
 ]
 
@@ -30,14 +30,12 @@ def process_ledger(account_map, tx_list):
     for tx in tx_list:
         tx_type = tx["type"]
         
-        # Sanitize amount - convert to float
         try:
             amount = float(tx["amount"])
         except (ValueError, TypeError):
             print(f"[{tx['id']}] ERROR: Invalid amount value: {tx['amount']}")
             continue
 
-        # Validate amount is positive
         if amount <= 0:
             print(f"[{tx['id']}] REJECTED: Invalid amount {amount} (must be positive)")
             continue
