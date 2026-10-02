@@ -27,15 +27,13 @@ users_from_db = [
         "age": 22
     },
     {
-        # ❌ REAL HUMAN BUG: Is user ne Google Sign-in kiya tha, toh iska 'last' name missing hai!
-        # Python yahan crash karega: KeyError: 'last'
+        # ...Real Human Bug explanation...
         "name": {"first": "Aman"},
         "email": "Aman@Company.in",
         "age": 25
     },
     {
-        # ❌ REAL HUMAN BUG 2: Is user ka email None hai!
-        # Python yahan crash karega: AttributeError: 'NoneType' has no attribute 'lower'
+        # ...Real Human Bug explanation...
         "name": {"first": "Priya", "last": "Verma"},
         "email": None,
         "age": 20
